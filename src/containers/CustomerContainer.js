@@ -21,7 +21,7 @@ class CustomerContainer extends Component {//<p>Datos del Cliente {this.props.cu
     handleSubmit = values => {
         console.log(JSON.stringify(values));
         const { id } = values;
-        this.props.updateCustomer(id, values);
+        return this.props.updateCustomer(id, values);
     }
 
     handleOnBack = () => {
