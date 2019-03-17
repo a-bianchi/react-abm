@@ -1,26 +1,32 @@
 {
-    "customers": [{
-            "dni": "31624988",
-            "name": "Alejo Bianchi",
-            "age": 33
-        },
-        {
-            "dni": "31624333",
-            "name": "Carlitos",
-            "age": 45
-        },
-        {
-            "dni": "32423565",
-            "name": "Mr Tete",
-            "age": 66
-        }
-    ],
-    "comments": [{
-        "id": 1,
-        "body": "some comment",
-        "postId": 1
-    }],
-    "profile": {
-        "name": "typicode"
+  "customers": [
+    {
+      "id": "31624988",
+      "dni": "31624988",
+      "name": "Alejo Bianchi",
+      "age": 33
+    },
+    {
+      "id": "31624333",
+      "dni": "31624333",
+      "name": "Carlitos",
+      "age": 45
+    },
+    {
+      "id": "32423565",
+      "dni": "32423565",
+      "name": "Mr Tete",
+      "age": 66
     }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
 }
