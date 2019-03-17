@@ -3,12 +3,12 @@ import { connect } from 'react-redux';
 import AppFrame from './../components/AppFrame';
 import PropTypes from 'prop-types';
 import { getCustomerByDni } from './../selectors/customers';
-import { Route } from 'react-router-dom';
-import { withRouter } from 'react-router-dom';
+import { Route, withRouter } from 'react-router-dom';
 import CustomerEdit from './../components/CustomerEdit';
 import CustomerData from './../components/CustomerData';
 import { fetchCustomers } from './../actions/fetchCustomers';
 import { updateCustomer } from './../actions/updateCustomer';
+import { SubmissionError } from 'redux-form';
 
 class CustomerContainer extends Component {//<p>Datos del Cliente {this.props.customer.name}</p>
     
@@ -21,7 +21,11 @@ class CustomerContainer extends Component {//<p>Datos del Cliente {this.props.cu
     handleSubmit = values => {
         console.log(JSON.stringify(values));
         const { id } = values;
-        return this.props.updateCustomer(id, values);
+        return this.props.updateCustomer(id, values).then( r => {
+            if( r.error ){
+                throw new SubmissionError(r.payload);
+            }
+        });
     }
 
     handleOnBack = () => {
